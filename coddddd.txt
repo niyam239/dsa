@@ -1,0 +1,39 @@
+// ON-OFF LED lights 
+#define led1 13  //Green colour LED name given 
+#define led2 8   //RED colour LED name given
+void setup()
+{
+  pinMode(led1, OUTPUT); // led is use to show output 
+  pinMode(led2, OUTPUT);//That's Why pinmode use as output
+}
+
+void loop()
+{
+  digitalWrite(led1, HIGH);//Green colour LED will on 
+  digitalWrite(led2, LOW);//RED colour LED will off
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(led2, HIGH);//RED colour LED will on
+  digitalWrite(led1, LOW);//Green colour LED will of
+  delay(1000); // Wait for 1000 millisecond(s)
+}
+
+
+// PIR // motion detection
+//
+#define sensor 7 
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(sensor, INPUT);
+}
+
+void loop()
+{
+  int s = digitalRead(sensor);
+  if(s == HIGH){
+  	Serial.println("DETECTED");
+  }
+  else {
+  	Serial.println("NOT DETECTED");
+  }
+}
